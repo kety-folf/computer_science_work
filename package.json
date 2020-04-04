@@ -2,6 +2,7 @@
   "name": "",
   "version": "",
   "dependencies": {
+    "async": "^3.2.0",
     "discord.js": "^12.1.1",
     "npm": "^6.14.4",
     "quick.db": "^7.0.0-b22"
