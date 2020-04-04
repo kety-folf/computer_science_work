@@ -19,7 +19,7 @@ const commandsDir = readdirSync('./commands/');
 commandsDir.forEach(x => load(x));
 
 bot.on('ready', async () => {
-    console.log(`Connected as ${ bot.user.tag }  in  ${bot.guilds.size}  servers`)
+    console.log(`Connected as ${ bot.user.tag } `)//TODO: add server count because discord.js V12 has changes that make it hard to get ONE number from something that should be very easy to get and i know this is getting long i just dont like how the new changes work and they are very hard to fix.
     clientUser.setActivity(`reminding you of dates | prefix: ${prefix}`);
     bot.user.setStatus("online");
 });
