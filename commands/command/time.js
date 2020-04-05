@@ -1,8 +1,8 @@
 const { MessageEmbed } = require('discord.js')
 
-const db = require('quick.db')
-module.exports.run = async (folf, message, args, embedErr, embedimg, embedlink, embedtxt) => {
-    if (message.author.id !== "263443630767734784") db.add('count.time', 1)
+
+module.exports.run = async (bot, message, args, embedErr, embedimg, embedlink, embedtxt) => {
+   
     // List of timezones and locations to be used
     const timezoneList = [
         ["Eastern (Server) Time", "America/New_York"],
