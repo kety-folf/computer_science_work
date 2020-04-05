@@ -3,6 +3,7 @@
   "version": "",
   "dependencies": {
     "async": "^3.2.0",
+    "common-tags": "^1.8.0",
     "discord.js": "^12.1.1",
     "node-schedule": "^1.3.2",
     "npm": "^6.14.4",

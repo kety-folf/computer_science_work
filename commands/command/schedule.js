@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args, embedErr, embedimg, embedlink, e
     var dateInput = args;
     var date = new Date(args)
     var j = schedule.scheduleJob(date, function () {
-        
+        embedtxt("reminder", "you told me to remind you to do something");
     });
 
 };
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args, embedErr, embedimg, embedlink, e
 module.exports.help = {
     name: 'schedule',
     description: 'adds a date to a calender for that server. can only have 1 reminder per a server and you cant set a reminder name ',
-    usage: 'year, month 0 = jan 11= dec, day of month 1-31, hour, minute, ',
+    usage: 'year, month 0 = jan 11= dec, day of month 1-31, hour, minute,am/pm 0-1 ',
     category: 'misc',
     accessableby: 'members'
     // aliases: []
