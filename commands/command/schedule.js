@@ -1,8 +1,9 @@
 const schedule = require('node-schedule')
-const db = require('quick.db')
+//const db = require('quick.db')
 module.exports.run = async (bot, message, args, embedErr, embedimg, embedlink, embedtxt) => {
     var dateInput = args;
     var date = new Date(args)
+    embedtxt("reminder set", `the reminder has been set for ${dateInput}`);
     var j = schedule.scheduleJob(date, function () {
         embedtxt("reminder", "you told me to remind you to do something");
     });
