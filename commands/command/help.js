@@ -10,14 +10,14 @@ module.exports.run = async (bot, message, args, embedErr, embedimg, embedlink, e
         .setThumbnail(bot.user.displayAvatarURL);
 
     if (!args[0]) {
-        channel.send({
+        message.channel.send({
             embed: {
                 color: 3447003,
                 author: {
                     name: bot.user.username,
                     icon_url: bot.user.avatarURL
                 },
-                title: "Bot prefix is --",
+                title: `Bot prefix is -- `,
                 description: "Commands",
                 fields: [{
                     name: "time",
@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args, embedErr, embedimg, embedlink, e
                 },
                     {
                         name: "schedule",
-                        value: "schedules a time there can only be 1 running at once. time format is for command is year, month 0 = jan 11= dec, day of month 1-31, hour, minute, am/pm 0-1"
+                        value: "schedules a time there can only be 1 running at once. time format is for command is <date> <month 0=jan 11=dec> <year> <hour> <minute> <AM/PM> <reason>"
                     },
                 {
                     name: 'help',

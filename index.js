@@ -22,7 +22,7 @@ commandsDir.forEach(x => load(x));
 
 bot.on('ready', async () => {
     console.log(`Connected as ${bot.user.tag} in  ${bot.guilds.cache.size} server/s `)
-    bot.user.setPresence({  activity: {  name: `reminding you of dates | prefix: ${prefix}`, type:'PLAYING' }, status: 'idle' })
+    bot.user.setPresence({  activity: {  name: `reminding you of times | prefix: ${prefix}`, type:'PLAYING' }, status: 'idle' })
         .then(console.log)
         .catch(console.error);
   
@@ -70,6 +70,6 @@ bot.on('message', async message => {
 
     if (!message.content.startsWith(bot.prefix)) return;
     const commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
-    if (commandfile) commandfile.run(bot, message, args, embedErr, embedimg, embedlink, embedtxt, arg);
+    if (commandfile) commandfile.run(bot, message, args, embedErr, embedimg, embedlink, embedtxt, arg, prefix);
 });
 bot.login(token).catch(e => console.log(e));

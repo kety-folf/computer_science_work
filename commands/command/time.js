@@ -5,14 +5,14 @@ module.exports.run = async (bot, message, args, embedErr, embedimg, embedlink, e
    
     // List of timezones and locations to be used
     const timezoneList = [
-        ["Eastern (Server) Time", "America/New_York"],
+        ["Eastern Time", "America/New_York"],
         ["UK Time", "Europe/London"],
         ["US Central Time", "America/Chicago"],
         ["US Mountain Time", "America/Denver"],
         ["US Pacific Time", "America/Los_Angeles"],
         ["Central European Time", "Europe/Berlin"],
         ["Hong Kong/Philippines/Western Australia Time", "Asia/Hong_Kong"],
-        ["New Zealand Time", "Pacific/Auckland"],
+        ["New Zealand (server) Time", "Pacific/Auckland"],
         ["Chile Time", "America/Santiago"]
     ];
 
