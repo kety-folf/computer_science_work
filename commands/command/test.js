@@ -1,12 +1,8 @@
-import { setImmediate, setInterval, setTimeout } from 'timers';
-import { checkServerIdentity } from 'tls';
-import { monitorEventLoopDelay } from 'perf_hooks';
-import { Channel, User } from 'discord.js';
 
 
 const db = require('quick.db');
 const key = require('keygenerator');
-module.exports.run = async (bot, message, embedErr, embedimg, embedlink, embedtxt, prefix) => {
+module.exports.run = async (bot, message, embedErr, embedimg, embedlink, embedtxt, prefix,channel,user) => {
     let today = new Date();   
    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     let time = today.getHours() + ":" + today.getMinutes();

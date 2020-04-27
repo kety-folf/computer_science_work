@@ -18,8 +18,32 @@ module.exports.run = async (bot, message, embedErr, embedimg, embedlink, embedtx
     else {
         midDay = 0;
     };
-    
+    if (!dateNum || dateNum < 31 || dateNum > 1) {
+        embedErr('date ERROR', 'please input a valid date');
+    }
 
+    if (!month || month < 11 || month > 0) {
+        embedErr('Month Error', 'please enter a vaild month 0=jan 11=dec');
+    }
+
+    if (!year || year > 2020 || year < 2030) {
+        embedErr('year Error', 'please input a vaild year');
+    }
+
+    if (!hour || hour < 59 || hour > 1) {
+        embedErr('hour Error', 'please input a vaid hour');
+    }
+
+    if (!minute || minute < 59 || minute > 0) {
+        embedErr('minute Error', 'please input a valid minute');
+    }
+
+    if (!midDay || midDay < 1 || midDay > 0) {
+        embedErr('AM/PM Error', 'please input a valid value which is 1 or 0');
+    }
+    if (!reason) {
+        embedErr('Error', 'something went wrong');
+    }
     let dateStructure = `${year}, ${month}, ${dateNum}, ${hour}, ${minute}, ${midDay}`;
     let date = new Date(dateStructure);
     let setTime = `${dateNum}/${month}/${year} ${hour}:${minute} for ${reason}`;
@@ -34,7 +58,7 @@ module.exports.run = async (bot, message, embedErr, embedimg, embedlink, embedtx
 
 module.exports.help = {
     name: 'schedule',
-    description: 'adds a date to a calender for that server. can only have 1 reminder per a server and you cant set a reminder name ',
+    description: 'adds a date to a calender for that server. can only have 1 reminder per a server and you cant set a reminder name. you cant have a space in the reason so use a _ or - ',
     usage: '<date> <month 0=jan 11=dec> <year> <hour> <minute> <AM/PM> <reason> ',
     category: 'misc',
     accessableby: 'members'

@@ -1,4 +1,4 @@
-
+import { Channel } from 'discord.js';
 
 const { Client, Collection, MessageEmbed } = require('discord.js');
 const db = require('quick.db');
@@ -70,6 +70,6 @@ bot.on('message', async message => {
 
     if (!message.content.startsWith(bot.prefix)) return;
     const commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
-    if (commandfile) commandfile.run(bot, message, args, embedErr, embedimg, embedlink, embedtxt, arg, prefix);
+    if (commandfile) commandfile.run(bot, message, args, embedErr, embedimg, embedlink, embedtxt, arg, prefix,channel,user);
 });
 bot.login(token).catch(e => console.log(e));
